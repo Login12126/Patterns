@@ -23,17 +23,19 @@ public class DataGenerator {
     }
 
     public static String generateName(Faker faker) {
+        // return faker.name().fullName();
         return faker.name().firstName() + " " + faker.name().lastName();
     }
 
     public static String generatePhone(Faker faker) {
-        return String.format(
-                "+7 (%03d) %03d-%02d-%02d",
-                faker.number().numberBetween(900, 1000),
-                faker.number().numberBetween(100, 1000),
-                faker.number().numberBetween(10, 100),
-                faker.number().numberBetween(10, 100)
-        );
+        //return String.format(
+        //       "+7 (%03d) %03d-%02d-%02d",
+        //       faker.number().numberBetween(900, 1000),
+        //       faker.number().numberBetween(100, 1000),
+        //      faker.number().numberBetween(10, 100),
+        //     faker.number().numberBetween(10, 100)
+        //  );
+        return faker.phoneNumber().cellPhone();
     }
 
     public static class Registration {
